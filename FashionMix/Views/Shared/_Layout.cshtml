@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+    <title>@ViewData["Title"] - FashionMix</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-info border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index" style="font-family: 'Caveat', cursive; font-family: 'Pacifico', cursive;"><h3>FashionMix</h3></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse ">
+                    <ul class="navbar-nav flex-grow-1 ">
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <ul class="navbar-nav flex-grow-1  justify-content-between">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Privacy">Privacidade</a>
+                            </li>
+                            <form class="search-form ">
+                                <input id="search-box" type="text" class="search-input form-control" placeholder="Search..." name="q" />
+                                <label for="search-box"><i class="zmdi zmdi-search"></i></label>
+                            </form>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container ">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top bg-info footer text-white">
+        <div class="container text-center">
+            &copy;  By Fabricio Santos - FashionMix - 2020
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+    @await Component.InvokeAsync("NToastNotify")
+</body>
+</html>
