@@ -29,7 +29,7 @@ namespace FashionMix.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Produtos()
         {
             return View();
         }
